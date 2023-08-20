@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:13:52 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/08/20 12:40:22 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/08/20 22:35:31 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 Fixed::Fixed()
 {
+	std::cout << "Default constructor called" << std::endl;
 	fixed_point_number = 0;
 }
 
-Fixed::Fixed(int fpn)
-{
-	fixed_point_number = fpn;
-}
-
 Fixed::Fixed(const Fixed& other_fixed) : fixed_point_number(other_fixed.fixed_point_number)
-{}
+{
+	std::cout << "Copy constructor called" << std::endl;
+}
 
 Fixed& Fixed::operator=(const Fixed& other_fixed)
 {
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other_fixed)
 		fixed_point_number = other_fixed.fixed_point_number;
 	return *this;
@@ -34,15 +33,17 @@ Fixed& Fixed::operator=(const Fixed& other_fixed)
 
 Fixed::~Fixed()
 {
-	std::cout << "destroyed !" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void	Fixed::setRawBits( int const raw )
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	fixed_point_number = raw;
 }
 
 int	Fixed::getRawBits( void ) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return fixed_point_number;
 }

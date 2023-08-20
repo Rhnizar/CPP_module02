@@ -6,13 +6,13 @@
 #    By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 11:42:36 by rrhnizar          #+#    #+#              #
-#    Updated: 2023/08/20 11:42:57 by rrhnizar         ###   ########.fr        #
+#    Updated: 2023/08/20 20:27:49 by rrhnizar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 Name = exec
 
-SRC = main.cpp
+SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
