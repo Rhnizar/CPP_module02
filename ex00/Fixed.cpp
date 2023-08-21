@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:13:52 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/08/20 22:35:31 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/08/21 10:22:22 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ Fixed::Fixed()
 	fixed_point_number = 0;
 }
 
-Fixed::Fixed(const Fixed& other_fixed) : fixed_point_number(other_fixed.fixed_point_number)
+Fixed::Fixed(const Fixed& other_fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = other_fixed;
 }
+
 
 Fixed& Fixed::operator=(const Fixed& other_fixed)
 {
