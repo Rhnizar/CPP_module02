@@ -54,8 +54,11 @@ class Fixed{
 		Fixed& operator--();
 
 
-		static int min(Fixed fixed_point1, Fixed fixed_point2);
-		static int max(Fixed fixed_point1, Fixed fixed_point2);
+		static Fixed min(Fixed fixed_point1, Fixed fixed_point2);
+		static Fixed max(Fixed fixed_point1, Fixed fixed_point2);
+
+		static const Fixed minn(const Fixed fixed_point1, const Fixed fixed_point2);
+		static const Fixed maxx(const Fixed fixed_point1, const Fixed fixed_point2);
 		
 };
 

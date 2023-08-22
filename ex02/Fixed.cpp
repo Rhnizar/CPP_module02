@@ -178,18 +178,34 @@ Fixed Fixed::operator--(int)
 	return NewFixed;
 }
 
-int Fixed::min(Fixed fixed_point1, Fixed fixed_point2)
+Fixed Fixed::min(Fixed fixed_point1, Fixed fixed_point2)
 {
-	if (fixed_point1.fixed_point_number < fixed_point2.fixed_point_number)
-		return fixed_point1.fixed_point_number;
+	if (fixed_point1.toFloat() < fixed_point2.toFloat())
+		return fixed_point1;
 	else
-		return fixed_point2.fixed_point_number / 256;
+		return fixed_point2;
 }
 
-int Fixed::max(Fixed fixed_point1, Fixed fixed_point2)
+const Fixed Fixed::minn(Fixed fixed_point1, Fixed fixed_point2)
 {
-	if (fixed_point1.fixed_point_number > fixed_point2.fixed_point_number)
-		return fixed_point1.fixed_point_number;
+	if (fixed_point1.toFloat() < fixed_point2.toFloat())
+		return fixed_point1;
 	else
-		return fixed_point2.fixed_point_number / 256;
+		return fixed_point2;
+}
+
+Fixed Fixed::max(Fixed fixed_point1, Fixed fixed_point2)
+{
+	if (fixed_point1.toFloat() > fixed_point2.toFloat())
+		return fixed_point1;
+	else
+		return fixed_point2;
+}
+
+const Fixed  Fixed::maxx(Fixed fixed_point1, Fixed fixed_point2)
+{
+	if (fixed_point1.toFloat() > fixed_point2.toFloat())
+		return fixed_point1;
+	else
+		return fixed_point2;
 }
