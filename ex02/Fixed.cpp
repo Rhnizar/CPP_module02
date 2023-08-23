@@ -6,7 +6,7 @@
 /*   By: rrhnizar <rrhnizar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 11:43:23 by rrhnizar          #+#    #+#             */
-/*   Updated: 2023/08/21 21:10:45 by rrhnizar         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:35:19 by rrhnizar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,7 @@ Fixed Fixed::operator--(int)
 	return NewFixed;
 }
 
-Fixed Fixed::min(Fixed fixed_point1, Fixed fixed_point2)
+Fixed& Fixed::min(Fixed& fixed_point1, Fixed& fixed_point2)
 {
 	if (fixed_point1.toFloat() < fixed_point2.toFloat())
 		return fixed_point1;
@@ -186,7 +186,8 @@ Fixed Fixed::min(Fixed fixed_point1, Fixed fixed_point2)
 		return fixed_point2;
 }
 
-const Fixed Fixed::minn(Fixed fixed_point1, Fixed fixed_point2)
+
+const Fixed& Fixed::min(const Fixed& fixed_point1, const Fixed& fixed_point2)
 {
 	if (fixed_point1.toFloat() < fixed_point2.toFloat())
 		return fixed_point1;
@@ -194,7 +195,8 @@ const Fixed Fixed::minn(Fixed fixed_point1, Fixed fixed_point2)
 		return fixed_point2;
 }
 
-Fixed Fixed::max(Fixed fixed_point1, Fixed fixed_point2)
+
+Fixed& Fixed::max(Fixed& fixed_point1, Fixed& fixed_point2)
 {
 	if (fixed_point1.toFloat() > fixed_point2.toFloat())
 		return fixed_point1;
@@ -202,7 +204,7 @@ Fixed Fixed::max(Fixed fixed_point1, Fixed fixed_point2)
 		return fixed_point2;
 }
 
-const Fixed  Fixed::maxx(Fixed fixed_point1, Fixed fixed_point2)
+const Fixed& Fixed::max(const Fixed& fixed_point1, const Fixed& fixed_point2)
 {
 	if (fixed_point1.toFloat() > fixed_point2.toFloat())
 		return fixed_point1;
